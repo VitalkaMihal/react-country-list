@@ -3,7 +3,7 @@ import React from "react";
 interface BadgeProps {
   color: string;
   count: number;
-  title: string;
+  title: "area" | "population";
 }
 
 export const Badge = ({ color, count, title }: BadgeProps) => {
