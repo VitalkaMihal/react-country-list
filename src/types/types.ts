@@ -1,24 +1,39 @@
-export interface countryData {
-        flags: {
-            png: string;
-            svg: string;
-        }
-        name: {
-            common: string;
-            official: string;
-            nativeName: {};
-        };
-        capital: Array<string>;
+interface CountryData {
+        flags: CountryFlags;
+        name: CountryName;
+        capital: string[];
         region: string;
         area: number;
         population: number;
+};
+
+interface CountryFlags {
+    png: string;
+    svg: string;
+};
+
+interface CountryName {
+    common: string;
+    official: string;
+    nativeName: CountryNativeName;
+};
+interface CountryNative {
+    official: string; 
+    common: string;
+}
+interface CountryNativeName {
+    [key: string]: CountryNative | undefined;
 }
 
-export interface transformCountries {
+interface TransformCountries {
     name: string;
     capital: string;
     population: number;
     flag: string;
     area:number;
     region: string;
-}
+};
+
+
+
+export type { CountryData, TransformCountries, CountryFlags, CountryName }

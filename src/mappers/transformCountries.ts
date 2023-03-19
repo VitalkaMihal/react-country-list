@@ -1,9 +1,8 @@
-import { countryData } from "../types/types"
-import { transformCountries } from "../types/types"
+import { CountryData, TransformCountries } from "../types/types"
 
 
-export const transformCountry = (countries: countryData[]): transformCountries[] => {
-    return countries.map((country: countryData) => {
+export const transformCountry = (countries: CountryData[]): TransformCountries[] => {
+    return countries.map((country: CountryData) => {
         return {
         name: country.name.common,
         capital: country.capital[0],

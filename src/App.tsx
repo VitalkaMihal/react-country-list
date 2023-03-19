@@ -1,21 +1,19 @@
 import React from 'react';
 
-import countries from './country-data.json';
+import countriesJSON from './country-data.json';
 import { transformCountry } from './mappers/transformCountries';
+import { CountryData, TransformCountries } from './types/types';
+import { CountryItem } from './components/CountryItem';
+import { CountryList } from './components/CountryList';
 
 function App() {
-  console.log(transformCountry(countries))
+  const countries = transformCountry(countriesJSON);
+
   return (
     <div className="container">
-            <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">A second item</li>
-      <li className="list-group-item">A third item</li>
-      <li className="list-group-item">A fourth item</li>
-      <li className="list-group-item">And a fifth one</li>
-    </ul>
+      <h1>Country List</h1>
+      <CountryList countryInfo={countries}/>
     </div>
-
   );
 }
 
