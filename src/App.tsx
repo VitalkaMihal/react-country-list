@@ -13,6 +13,6 @@ const App = () => {
       <CountryList countries={countries} />
     </div>
   );
-}
+};
 
 export default App;
