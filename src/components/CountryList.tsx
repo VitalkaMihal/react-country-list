@@ -1,12 +1,16 @@
 import React from "react";
 import { CountryItem } from "./CountryItem";
-import type { TransformCountries } from "../types/types";
+import type { Country } from "../types/types";
 
-export const CountryList = ({ countriesTransform }: {countriesTransform: TransformCountries[]}) => {
+interface CountryListProps {
+  countries: Country[];
+}
+
+export const CountryList = ({ countries }: CountryListProps) => {
   return (
     <div className="container text-center row">
-      {countriesTransform.map((country) => {
-        return <CountryItem {...country} />;
+      {countries.map((country) => {
+        return <CountryItem country={country} />;
       })}
     </div>
   );

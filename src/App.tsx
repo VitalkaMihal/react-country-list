@@ -1,16 +1,16 @@
 import React from "react";
 
 import countriesJSON from "./country-data.json";
-import { transformCountry } from "./mappers/transformCountries";
+import { transformCountries } from "./mappers/transformCountries";
 import { CountryList } from "./components/CountryList";
 
-function App() {
-  const countries = transformCountry(countriesJSON);
+const App = () => {
+  const countries = transformCountries(countriesJSON);
 
   return (
     <div className="container">
       <h1>Country List</h1>
-      <CountryList countriesTransform={countries} />
+      <CountryList countries={countries} />
     </div>
   );
 }

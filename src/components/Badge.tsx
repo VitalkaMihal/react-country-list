@@ -1,9 +1,12 @@
 import React from "react";
 
+type Title = "area" | "population";
+
+
 interface BadgeProps {
   color: string;
   count: number;
-  title: "area" | "population";
+  title: Title;
 }
 
 export const Badge = ({ color, count, title }: BadgeProps) => {

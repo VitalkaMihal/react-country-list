@@ -1,5 +1,5 @@
-interface CountryData {
-        flags: CountryFlags;
+interface CountryAPI {
+        flags: CountryFlag;
         name: CountryName;
         capital: string[];
         region: string;
@@ -7,7 +7,7 @@ interface CountryData {
         population: number;
 };
 
-interface CountryFlags {
+interface CountryFlag {
     png: string;
     svg: string;
 };
@@ -22,10 +22,10 @@ interface CountryNative {
     common: string;
 }
 interface CountryNativeName {
-    [key: string]: CountryNative | undefined;
+    [native: string]: CountryNative | undefined;
 }
 
-interface TransformCountries {
+interface Country {
     name: string;
     capital: string;
     population: number;
@@ -36,4 +36,4 @@ interface TransformCountries {
 
 
 
-export type { CountryData, TransformCountries, CountryFlags, CountryName }
+export type { CountryAPI, Country }
