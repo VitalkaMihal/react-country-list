@@ -10,7 +10,7 @@ export const CountryList = ({ countries }: CountryListProps) => {
   return (
     <div className="container text-center row">
       {countries.map((country) => {
-        return <CountryItem country={country} />;
+        return <CountryItem key={country.name} country={country} />;
       })}
     </div>
   );
